@@ -1,13 +1,7 @@
 import ttkbootstrap as tb
 from ui import create_ui
 from explorer import populate_tree, go_to_parent, select_download_folder, on_item_double_click
-
-# ======= Funciones Placeholder para Descarga =======
-def download_video(url, folder, file_tree, folder_label):
-    print(f"Descargando video de: {url} en {folder}")
-
-def download_audio(url, folder, file_tree, folder_label):
-    print(f"Descargando audio de: {url} en {folder}")
+from downloader import download_video, download_audio  # Importar funciones de descarga
 
 # ======= Configuración Inicial =======
 download_folder = "C:/Users/Arkan/Downloads"  # Cambia esto según tu preferencia
@@ -23,11 +17,11 @@ ui_elements = create_ui(
     root, 
     download_folder, 
     icons, 
-    download_video, 
-    download_audio, 
+    lambda url, folder, tree, label: download_video(url, folder, tree, label, root),  # Pasar root
+    lambda url, folder, tree, label: download_audio(url, folder, tree, label, root),  # Pasar root
     go_to_parent, 
     select_download_folder, 
-    on_item_double_click  # Se pasa la función correcta
+    on_item_double_click
 )
 
 # Obtener elementos UI

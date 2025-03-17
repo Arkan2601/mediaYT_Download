@@ -1,0 +1,48 @@
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+.env/
+venv/
+env/
+
+# IDEs and editors
+.vscode/
+.idea/
+
+# Logs and databases
+*.log
+*.db
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Python packaging
+*.egg
+*.egg-info/
+dist/
+build/
+*.wheel
+
+# Cache files
+*.cache
+*.pytest_cache/
+
+# Test coverage reports
+htmlcov/
+.coverage
+*.cover
+*.coverage.*
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Media Downloader specific
+downloads/
